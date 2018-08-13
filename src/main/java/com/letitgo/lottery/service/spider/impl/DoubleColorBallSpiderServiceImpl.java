@@ -1,7 +1,7 @@
 package com.letitgo.lottery.service.spider.impl;
 
 import com.letitgo.lottery.center.PropertiesCenter;
-import com.letitgo.lottery.entity.node.doc.RootNode;
+import com.letitgo.lottery.node.node.doc.RootNode;
 import com.letitgo.lottery.service.spider.SpiderService;
 import com.letitgo.lottery.util.PageContentOperation;
 import com.letitgo.lottery.util.WebClient;

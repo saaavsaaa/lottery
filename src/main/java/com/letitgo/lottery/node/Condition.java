@@ -1,6 +1,6 @@
-package com.letitgo.lottery.entity;
+package com.letitgo.lottery.node;
 
-import com.letitgo.lottery.entity.node.doc.ElementNode;
+import com.letitgo.lottery.node.node.doc.ElementNode;
 
 /**
  * Created by aaa on 2017/1/30.

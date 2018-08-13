@@ -1,4 +1,4 @@
-package com.letitgo.lottery.entity.node.doc;
+package com.letitgo.lottery.node.node.doc;
 
 import java.util.List;
 

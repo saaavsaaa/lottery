@@ -1,6 +1,6 @@
 package com.letitgo.lottery.util.analysis;
 
-import com.letitgo.lottery.entity.node.doc.DocNode;
+import com.letitgo.lottery.node.node.doc.DocNode;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -9,9 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class NodeResolve {
     private final String input;
-    private String current;
+    private DocNode current;
     private int position;
-    private boolean ended;
     private final Map<String, DocNode> strategies = new ConcurrentHashMap<>();
     
     public NodeResolve(final String input) {
@@ -19,14 +18,21 @@ public class NodeResolve {
     }
     
     public void next() {
-        
+        if (isEnd()) {
+            return;
+        }
+        int nodeBegin = ++position;
+        while (!isEnd() && NodeSelector.continueNext()) {
+            position++;
+        }
+        String key = input.substring(nodeBegin, position);
     }
     
     public boolean isEnd() {
-        return ended;
+        return position >= input.length();
     }
     
-    public String getCurrent() {
+    public DocNode getCurrent() {
         return current;
     }
 }

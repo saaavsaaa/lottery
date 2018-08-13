@@ -1,4 +1,4 @@
-package com.letitgo.lottery.entity;
+package com.letitgo.lottery.node;
 
 /**
  * Created by aaa on 2017/1/30.

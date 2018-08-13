@@ -1,9 +1,10 @@
-package com.letitgo.lottery.entity.node.doc;
+package com.letitgo.lottery.node.node.doc;
 
-import com.letitgo.lottery.entity.Attribute;
+import com.letitgo.lottery.node.Attribute;
 import com.letitgo.lottery.util.struct.OnlyAddArray;
 
-import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by aaa on 2017/2/1.
@@ -26,7 +27,7 @@ public abstract class DocNode {
     private OnlyAddArray key;
 
     //root could be like this : <html xmlns="http://www.w3.org/1999/xhtml">
-    private List<Attribute> attributes;
+    private final Map<String, Attribute> attributes = new ConcurrentHashMap<>();
 
 
 
