@@ -22,10 +22,11 @@ public class NodeResolve {
             return;
         }
         int nodeBegin = ++position;
-        while (!isEnd() && NodeSelector.continueNext()) {
+        while (!isEnd() && NodeSelector.continueNext(input.charAt(position))) {
             position++;
         }
-        String key = input.substring(nodeBegin, position);
+        String nodeText = input.substring(nodeBegin, position);
+        current = NodeSelector.build(nodeText);
     }
     
     public boolean isEnd() {
