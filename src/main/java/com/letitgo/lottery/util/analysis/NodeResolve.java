@@ -22,12 +22,14 @@ public class NodeResolve {
             return;
         }
         int nodeBegin = ++position;
-        while (!isEnd() && NodeSelector.continueNext(input.charAt(position))) {
+        NodeSelector selector = new NodeSelector();
+        while (!isEnd() && selector.continueNextChar(input.charAt(position))) {
             position++;
         }
-        String nodeText = input.substring(nodeBegin, position);
-        current = NodeSelector.build(nodeText);
-        nodes.put(nodeText, current);
+//        String nodeText = input.substring(nodeBegin, position);
+        String nodeType = selector.getNodeType();
+        current = selector.getNode();
+        nodes.put(nodeType, current);
     }
     
     public boolean isEnd() {
