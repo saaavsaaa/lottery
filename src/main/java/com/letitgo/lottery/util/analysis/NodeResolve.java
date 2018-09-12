@@ -11,7 +11,7 @@ public class NodeResolve {
     private final String input;
     private DocNode current;
     private int position;
-    private final Map<String, DocNode> strategies = new ConcurrentHashMap<>();
+    private final Map<String, DocNode> nodes = new ConcurrentHashMap<>();
     
     public NodeResolve(final String input) {
         this.input = input;
@@ -27,6 +27,7 @@ public class NodeResolve {
         }
         String nodeText = input.substring(nodeBegin, position);
         current = NodeSelector.build(nodeText);
+        nodes.put(nodeText, current);
     }
     
     public boolean isEnd() {
