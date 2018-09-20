@@ -23,7 +23,7 @@ public class ElementNode extends DocNode {
         return new ElementNode();
     }
 
-    private ElementNode(){
+    public ElementNode(){
         this(Constant.Root_Level + 2);
     }
 
