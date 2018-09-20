@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created by aaa on 18-8-10.
+ * Created by aaa.
+ * todo 考虑是否在节点初始化内部使用
  */
 public class NodeResolve {
     private final String input;
